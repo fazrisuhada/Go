@@ -10,7 +10,7 @@ func main() {
 	a := "a"
 	b := "b"
 
-	// bool := minuman1 != minuman3
-	bool := a > b
-	fmt.Println(bool)
+	// hasil := minuman1 != minuman3
+	hasil := a > b
+	fmt.Println(hasil)
 }
