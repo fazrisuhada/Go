@@ -4,6 +4,9 @@ import "fmt"
 
 func endApp() {
 	fmt.Println("End App")
+
+	mesagge := recover()
+	fmt.Println("Terjadi error", mesagge)
 }
 
 func runApp(error bool) {
@@ -15,4 +18,5 @@ func runApp(error bool) {
 }
 func main() {
 	runApp(true)
+	fmt.Println("Fazri Suhada")
 }
