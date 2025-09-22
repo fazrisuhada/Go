@@ -44,6 +44,20 @@ func TestSkip(t *testing.T) {
 	fmt.Println("Test Skip Done.")
 }
 
+func TestSubTest(t *testing.T) {
+	t.Run("Fazri", func(t *testing.T) {
+		result := HelloWorld("Fazri")
+		require.Equal(t, "Hello Fazri", result, "result must be 'Hello Fazri'")
+		fmt.Println("Test Skip Done.")
+	})
+
+	t.Run("Suhada", func(t *testing.T) {
+		result := HelloWorld("Suhada")
+		require.Equal(t, "Hello Suhada", result, "result must be 'Hello Suhada'")
+		fmt.Println("Test Skip Done.")
+	})
+}
+
 func TestMain(m *testing.M) {
 	fmt.Println("Sebelum unit test")
 
