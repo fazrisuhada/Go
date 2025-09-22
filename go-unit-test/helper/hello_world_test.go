@@ -43,3 +43,11 @@ func TestSkip(t *testing.T) {
 	assert.Equal(t, "Hello Suhada", result, "result must be 'Hello Suhada'")
 	fmt.Println("Test Skip Done.")
 }
+
+func TestMain(m *testing.M) {
+	fmt.Println("Sebelum unit test")
+
+	m.Run()
+
+	fmt.Println("Sesudah unit test")
+}
