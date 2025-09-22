@@ -58,6 +58,31 @@ func TestSubTest(t *testing.T) {
 	})
 }
 
+func TestHelloWorldTable(t *testing.T) {
+	tests := []struct {
+		name     string
+		request  string
+		expected string
+	}{
+		{
+			name:     "Fazri",
+			request:  "Fazri",
+			expected: "Hello Fazri",
+		},
+		{
+			name:     "Suhada",
+			request:  "Suhada",
+			expected: "Hello Suhada",
+		},
+	}
+	for _, test := range tests {
+		t.Run(test.name, func(t *testing.T) {
+			result := HelloWorld(test.request)
+			require.Equal(t, test.expected, result)
+		})
+	}
+}
+
 func TestMain(m *testing.M) {
 	fmt.Println("Sebelum unit test")
 
