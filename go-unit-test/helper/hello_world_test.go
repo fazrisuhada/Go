@@ -89,6 +89,20 @@ func BenchmarkHelloWorld(b *testing.B) {
 	}
 }
 
+func BenchmarkSub(b *testing.B) {
+	b.Run("Fazri", func(b *testing.B) {
+		for i := 0; i < b.N; i++ {
+			HelloWorld("Fazri")
+		}
+	})
+
+	b.Run("Suhada", func(b *testing.B) {
+		for i := 0; i < b.N; i++ {
+			HelloWorld("Suhada")
+		}
+	})
+}
+
 func TestMain(m *testing.M) {
 	fmt.Println("Sebelum unit test")
 
