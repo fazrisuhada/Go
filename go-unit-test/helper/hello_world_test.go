@@ -83,6 +83,12 @@ func TestHelloWorldTable(t *testing.T) {
 	}
 }
 
+func BenchmarkHelloWorld(b *testing.B) {
+	for i := 0; i < b.N; i++ {
+		HelloWorld("Fazri")
+	}
+}
+
 func TestMain(m *testing.M) {
 	fmt.Println("Sebelum unit test")
 
