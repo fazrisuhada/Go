@@ -103,6 +103,30 @@ func BenchmarkSub(b *testing.B) {
 	})
 }
 
+func BenchmarkTable(b *testing.B) {
+	benchmarks := []struct {
+		name    string
+		request string
+	}{
+		{
+			name:    "FazriSuhada",
+			request: "Fazri Suhada",
+		},
+		{
+			name:    "SuhadaFazri",
+			request: "Suhada Fazri",
+		},
+	}
+
+	for _, benchmark := range benchmarks {
+		b.Run(benchmark.name, func(b *testing.B) {
+			for i := 0; i < b.N; i++ {
+				HelloWorld(benchmark.name)
+			}
+		})
+	}
+}
+
 func TestMain(m *testing.M) {
 	fmt.Println("Sebelum unit test")
 
